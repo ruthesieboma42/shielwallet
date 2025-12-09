@@ -9,7 +9,7 @@ export default (props) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.replace("Onboarding");
-        }, 3000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, [navigation]);
