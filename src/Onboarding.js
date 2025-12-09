@@ -95,7 +95,7 @@ export default function Onboarding() {
                         marginHorizontal: 40,
                         alignSelf: "center",
                     }}
-                    onPress={() => Alert.alert('Get Started pressed')}
+                    onPress={() => navigation.navigate("Signup")}
                 >
                     <Text style={{ color: "#FFFFFF", textAlign: "center", fontSize: 16, fontWeight: "600" }}>
                         Get Started
@@ -115,6 +115,8 @@ export default function Onboarding() {
                             }}>
                             {"Already have an account? "}
                         </Text>
+						
+						<TouchableOpacity onPress={() => navigation.navigate("Login")}>
                         <Text 
                             style={{
                                 color: "#3B28CC",
@@ -123,6 +125,7 @@ export default function Onboarding() {
                             }}>
                             {"Login Here"}
                         </Text>
+						</TouchableOpacity>
                     </View>
       </ScrollView>
     </SafeAreaView>

@@ -3,7 +3,7 @@ import { SafeAreaView, View, ScrollView, Image, Text, } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default (props) => {
-
+	
      const navigation = useNavigation();
 
     useEffect(() => {
