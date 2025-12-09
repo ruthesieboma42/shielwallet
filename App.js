@@ -1,20 +1,52 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, ScrollView, Image, Text, } from "react-native";
+export default (props) => {
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	 const navigation = navigation();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigation.replace("Onboarding");
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, [navigation]);
+
+	return (
+		<SafeAreaView 
+			style={{
+				flex: 1,
+				backgroundColor: "#3B28CC",
+			}}>
+			<ScrollView  
+				style={{
+					flex: 1,
+					backgroundColor: "#3B28CC",
+				}}>
+				<View 
+					style={{
+						flexDirection: "row",
+						justifyContent: "space-between",
+						padding: 17,
+						marginBottom: 99,
+						marginHorizontal: 7,
+					}}>
+					
+					<Image
+						source = {'/src/assets/images/Logo.png'} 
+						resizeMode = {"stretch"}
+						style={{
+							position: "absolute",
+							bottom: 5,
+							left: 44,
+							width: 40,
+							height: 41,
+						}}
+					/>
+					
+				</View>
+			</ScrollView>
+		</SafeAreaView>
+	)
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
