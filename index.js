@@ -1,8 +1,21 @@
 import { registerRootComponent } from 'expo';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import App from './App';
+import Onboarding from './src/screens/Onboarding';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+const Stack = createNativeStackNavigator();
+
+function Navigation() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="App" component={App} />
+        <Stack.Screen name="Onboarding" component={Onboarding} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+registerRootComponent(Navigation);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { SafeAreaView, View, ScrollView, Image, Text, } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -32,17 +32,22 @@ export default (props) => {
 						padding: 17,
 						marginBottom: 99,
 						marginHorizontal: 7,
+						flex: 1,
+						justifyContent: "center",
+						alignItems: "center",
+						padding: 17,
+						marginHorizontal: 7,
 					}}>
+
 					
 					<Image
-						source = {'/src/assets/images/Logo.png'} 
-						resizeMode = {"stretch"}
+						source = {require('./src/assets/images/Logo.png')} 
+						resizeMode = {"contain"}
 						style={{
-							position: "absolute",
-							bottom: 5,
-							left: 44,
-							width: 40,
-							height: 41,
+							position: "center",
+							width: '50%',
+							height: undefined,
+							aspectRatio: 428 / 926
 						}}
 					/>
 					
