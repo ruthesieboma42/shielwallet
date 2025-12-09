@@ -3,7 +3,7 @@ import { registerRootComponent } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import App from './App';
-import Onboarding from './src/screens/Onboarding';
+import Onboarding from './src/Onboarding';
 
 const Stack = createNativeStackNavigator();
 

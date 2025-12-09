@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default (props) => {
 
-	 const navigation = useNavigation();
+     const navigation = useNavigation();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -14,46 +14,41 @@ export default (props) => {
         return () => clearTimeout(timer);
     }, [navigation]);
 
-	return (
-		<SafeAreaView 
-			style={{
-				flex: 1,
-				backgroundColor: "#3B28CC",
-			}}>
-			<ScrollView  
-				style={{
-					flex: 1,
-					backgroundColor: "#3B28CC",
-				}}>
-				<View 
-					style={{
-						flexDirection: "row",
-						justifyContent: "space-between",
-						padding: 17,
-						marginBottom: 99,
-						marginHorizontal: 7,
-						flex: 1,
-						justifyContent: "center",
-						alignItems: "center",
-						padding: 17,
-						marginHorizontal: 7,
-					}}>
+    return (
+        <SafeAreaView 
+            style={{
+                flex: 1,
+                backgroundColor: "#3B28CC",
+            }}>
+            <ScrollView  
+                contentContainerStyle={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+                style={{
+                    flex: 1,
+                    backgroundColor: "#3B28CC",
+                }}>
+                <View 
+                    style={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}>
 
-					
-					<Image
-						source = {require('./src/assets/images/Logo.png')} 
-						resizeMode = {"contain"}
-						style={{
-							position: "center",
-							width: '50%',
-							height: undefined,
-							aspectRatio: 428 / 926
-						}}
-					/>
-					
-				</View>
-			</ScrollView>
-		</SafeAreaView>
-	)
+                    
+                    <Image
+                        source={require('./src/assets/images/Logo.png')} 
+                        resizeMode="contain"
+                        style={{
+                            width: '50%',
+                            height: undefined,
+                            aspectRatio: 428 / 926,
+                        }}
+                    />
+                    
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+    );
 };
-
